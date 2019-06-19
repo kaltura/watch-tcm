@@ -11,12 +11,16 @@ rules:
 - apiGroups:
     - ""
   resources:
-    - configmaps
+    - replicasets
   verbs:
-    - get
     - list
-    - update
-    - create
+
+- apiGroups:
+    - ""
+  resources:
+    - deployments
+  verbs:
+    - patch
 
 - apiGroups:
     - ""
