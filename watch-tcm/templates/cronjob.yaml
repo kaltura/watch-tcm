@@ -27,6 +27,21 @@ spec:
               env:
                 - name: NODE_TLS_REJECT_UNAUTHORIZED
                   value: "0"
+                - name: TCM_URL
+                  valueFrom:
+                    configMapKeyRef:
+                      name: kaltura-environment
+                      key: tcm.url
+                - name: TCM_APP_ID
+                  valueFrom:
+                    configMapKeyRef:
+                      name: kaltura-environment
+                      key: tcm.appId
+                - name: TCM_APP_SECRET
+                  valueFrom:
+                    configMapKeyRef:
+                      name: kaltura-environment
+                      key: tcm.appSecret
           restartPolicy: OnFailure
           nodeSelector:
             kaltura.role: core
