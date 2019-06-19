@@ -16,7 +16,7 @@ rules:
     - list
 
 - apiGroups:
-    - ""
+    - "apps"
   resources:
     - deployments
   verbs:
